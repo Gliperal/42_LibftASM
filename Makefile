@@ -1,11 +1,10 @@
 AS=nasm
 ASFLAGS=-f macho64
-# memset
 # memcpy
 # strdup
 OBJS=ft_bzero.o ft_strcat.o \
 	 ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o \
-	 ft_puts.o ft_strlen.o
+	 ft_puts.o ft_strlen.o ft_memset.o
 NAME=test
 RM=rm -rf
 
