@@ -4,13 +4,13 @@ OBJS=ft_bzero.o ft_strcat.o \
 	 ft_isalpha.o ft_isdigit.o ft_isalnum.o ft_isascii.o ft_isprint.o ft_toupper.o ft_tolower.o \
 	 ft_puts.o ft_strlen.o ft_memset.o ft_memcpy.o ft_strdup.o \
 	 ft_cat.o
-NAME=test
+NAME=libfts.a
 RM=rm -rf
 
 all: $(NAME)
 
-$(NAME): $(OBJS) main.c
-	gcc main.c $(OBJS) -o test
+$(NAME): $(OBJS)
+	ar -rcs $(NAME) $(OBJS)
 
 clean:
 	$(RM) $(OBJS)
@@ -19,5 +19,8 @@ fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
+
+test: main.c $(NAME)
+	gcc main.c -L. -lfts -o test
 
 .PHONY: all clean fclean re
