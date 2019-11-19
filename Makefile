@@ -12,6 +12,8 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	ar -rcs $(NAME) $(OBJS)
 
+$(OBJS): %.o: %.s
+
 clean:
 	$(RM) $(OBJS)
 

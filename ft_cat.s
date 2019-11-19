@@ -6,6 +6,9 @@ buff:		resb buffsize
 
 section .text
 _ft_cat:
+	; error check
+	cmp		edi, 0
+	jl		loop_end
 	; save fd for later use
 	; set rsi, which is the same for read and write
 	mov		r8, rdi

@@ -22,6 +22,7 @@ _ft_strdup:
 	mov		rdi, rax
 	mov		rsi, rbx
 	mov		rcx, r12
+	cld
 	repne movsb
 
 return:

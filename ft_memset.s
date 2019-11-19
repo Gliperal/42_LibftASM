@@ -5,6 +5,7 @@ _ft_memset:
 	mov		rax, rsi
 	mov		rcx, rdx
 	mov		rdx, rdi
+	cld
 	repnz stosb
 	mov		rax, rdx
 	ret
